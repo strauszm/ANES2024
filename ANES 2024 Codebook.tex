@@ -1,0 +1,638 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{setspace} 
+\usepackage{harvard}
+\usepackage[]{fancyhdr}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=black]{hyperref}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{makecell}
+\usepackage[table]{xcolor} 
+\setcounter{secnumdepth}{0}
+\title{Codebook for ANES 2024}
+\author{Michael Strausz}
+
+\begin{document}
+	\pagestyle{fancy}
+	\fancyhead{} % clear all header fields
+	\fancyhead[LO,LE]{\textbf{Michael Strausz}}
+	\fancyhead[RO,RE]{\textbf{ANES 2024 Codebook}}
+	
+\maketitle
+\pagebreak
+
+\tableofcontents
+\pagebreak
+
+\section{\centering{A note about the data source}}
+\textcolor{white}{.}
+\vskip.01in
+
+The data in this dataset is drawn from the 2024 wave of the \href{https://electionstudies.org/data-center/2024-time-series-study/}{American National Election Study}, which was conducted both before and after the 2024 presidential election in the United States. \href{https://www.michaelstrausz.com/}{Michael Strausz} selected the variables and their order, and edited the dataset for readability and usability in R. This dataset was downloaded in May 2025; it is a prerelease of the data.
+\vskip.02in
+
+\section{\centering{Demographics}}
+\textcolor{white}{.}
+\vskip.01in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & age \\ 
+	\textit{Definition} & Respondent's age on election day \\  
+	\textit{Notes} & 80 and over are coded 80 \\  
+	\textit{Original name} & V241458x \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & female \\ 
+	\textit{Definition} & Respondent's sex \\
+	\textit{Scale} & 0 if male, 1 if female \\    
+	\textit{Original name} & V241550 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & marital \\ 
+	\textit{Definition} & Respondent's marital status \\
+	\textit{Values} & divorced, married,never married, separated, or widowed \\    
+	\textit{Original name} & V241459 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & mil \\ 
+	\textit{Definition} & Respondent's military service \\
+	\textit{Values} & active duty, formerly active duty , or never served \\    
+	\textit{Original name} & V241470 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & union \\ 
+	\textit{Definition} & Respondent or member of household is union member \\
+	\textit{Scale} & 0 if no, 1 if yes \\    
+	\textit{Original name} & V241497 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & race \\ 
+	\textit{Definition} & Race/ethnicity of respondent \\
+	\textit{Values} & \makecell[t l]{Asian or Pacific Islander, Black, Hispanic, Multiple races,\\Native American, White} \\    
+	\textit{Original name} & V241501x \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & children \\ 
+	\textit{Definition} & Number of children in household \\
+	\textit{Notes} & 9 means ``more than 8'' \\  
+	\textit{Original name} & V241521 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & landline \\ 
+	\textit{Definition} & There is a working landline in respondent's household \\
+	\textit{Scale} & 1 means landline, 0 means no landline \\  
+		\textit{Original name} & V241525 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & smartphone \\ 
+	\textit{Definition} & \makecell[t l]{Respondent or someone in household has cellphone with internet \\connection}\\
+	\textit{Scale} & 1 means smartphone, 0 means no smartphone \\  
+	\textit{Original name} & V241528 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & passport \\ 
+	\textit{Definition} & \makecell[t l]{Respondent has valid, non-expired U.S. passport \\connection}\\
+	\textit{Scale} & 1 means passport, 0 means no passport \\  
+	\textit{Original name} & V241537 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & trans \\ 
+	\textit{Definition} & \makecell[t l]{Respondent identifies as transgender}\\
+	\textit{Scale} & 1 means transgender, 0 means not transgender \\  
+	\textit{Original name} & V241552 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & gayLesbian \\ 
+	\textit{Definition} & Respondent's sexual orientation \\
+	\textit{Values} & bisexual, gay/lesbian, other, straight \\    
+	\textit{Original name} & V242144 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & income \\ 
+	\textit{Definition} & Respondent's household income \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with six values ranging from ``under \$9,999'' to\\ ``\$250,000 or more''}\\    
+	\textit{Original name} & V241567x \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & guns \\ 
+	\textit{Definition} & How many guns in Respondent's household? \\
+	\textit{Original name} & V241583 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & ncis \\ 
+	\textit{Definition} & Does Respondent regularly watch NCIS on TV? \\
+	\textit{Scale} & 1 means NCIS watcher, 0 means not NCIS watcher \\  
+	\textit{Original name} & V241601r \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & polTalk \\ 
+	\textit{Definition} & \makecell[t l]{Number of days in the past week Respondent discussed politics\\with family or friends} \\
+	\textit{Scale} & Integer ranging from 0 to 7 \\  
+	\textit{Original name} & V242025 \\
+	\textit{Pre/Post-election} & Post-election	\
+\end{tabular}
+\vskip.2in
+
+\section{\centering{Religion}}
+\textcolor{white}{.}
+\vskip.01in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & relig \\ 
+	\textit{Definition} & Respondent's religion\\
+	\textit{Values} & \makecell[t l]{Agnostic, Atheist, Buddhist,
+	Hindu, Jewish, Latter-Day Saints,\\Muslim, 
+	Nothing in particular, Orthodox Christian, Other,\\ Protestant, or Roman Catholic}\\  
+	\textit{Original name} & V241422 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & bible \\ 
+	\textit{Definition} & \makecell[t l]{Is the bible the word of G-d or people?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with three values: ``literal word of g-d,'' ``inspired\\by g-d,'' ``word of people,''}\\  
+	\textit{Original name} & V241421 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & religAttn \\ 
+	\textit{Definition} & \makecell[t l]{How often does Respondent attend religious services?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``every week'' to\\ ``never.''}\\  
+	\textit{Original name} & V241440 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.2in
+
+\section{\centering{Education and political knowledge}}
+\textcolor{white}{.}
+\vskip.01in
+\begin{tabular}{ r l }
+	\textbf{Variable} & education \\ 
+	\textit{Definition} & \makecell[t l]{Respondent's level of education} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``less than high\\school'' to ``graduate degree.''}\\  
+	\textit{Original name} & V241465x \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & studentLoans \\ 
+	\textit{Definition} & \makecell[t l]{How much money Respondent owes in student loans, in dollars} \\
+	\textit{Original name} & V241569 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & senateTerm \\ 
+	\textit{Definition} & \makecell[t l]{Respondent's answer to the question ``How many years are there\\in one full term of office for a U.S. Senator?} \\
+	\textit{Original name} & V241612 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & houseKnowledge \\ 
+	\textit{Definition} & \makecell[t l]{Respondent correctly identified the Republicans as the party that\\controlled the House of Representative before the 2024 election} \\
+	\textit{Scale} & 1 for correct answer, 0 for incorrect answer \\
+	\textit{Original name} & V241614 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.2in
+
+\section{\centering{Voting and elections}}
+\textcolor{white}{.}
+\vskip.01in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & presPredict \\ 
+	\textit{Definition} & \makecell[t l]{Who does Respondent think will win the 2024 presidential election?} \\
+	\textit{Values} & ``Donald Trump'' and ``Kamala Harris'' \\
+	\textit{Original name} & V241211 \\
+	\textit{Pre/Post-election} & Pre-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & v2024 \\ 
+	\textit{Definition} & \makecell[t l]{Who did Respondent vote for in 2024 presidential election?} \\
+	\textit{Values} & \makecell[t l]{``Cornel West,'' ``Donald Trump,'' ``Jill Stein,'' ``Kamala Harris,''\\``Other,'' or ``Robert F. Kennedy, Jr''}\\
+	\textit{Original name} & V242096x \\
+	\textit{Pre/Post-election} & Both	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & v2020 \\ 
+	\textit{Definition} & \makecell[t l]{Who did Respondent vote for in 2020 presidential election?} \\
+	\textit{Values} & \makecell[t l]{``Did not vote'', ``Donald Trump,'' ``Joe Biden,'' or ``Other''}\\
+	\textit{Original name} & V241106x \\
+	\textit{Pre/Post-election} & Before 2024 election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & v2016 \\ 
+	\textit{Definition} & \makecell[t l]{Who did Respondent vote for in 2016 presidential election?} \\
+	\textit{Values} & \makecell[t l]{``Hillary Clinton,'' ``Donald Trump,'' or ``Other''}\\
+	\textit{Original name} & V241108 \\
+	\textit{Pre/Post-election} & Before 2024 election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & firstReg \\ 
+	\textit{Definition} & \makecell[t l]{When did  Respondent first register to vote?} \\
+	\textit{Values} & \makecell[t l]{Ordered factor with values ranging from ``never'' to ``5 or more\\years ago''}\\
+	\textit{Original name} & V242054x \\
+	\textit{Pre/Post-election} & Post-election	\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & turnout \\ 
+	\textit{Definition} & \makecell[t l]{Respondent voted in 2024} \\
+	\textit{Scale} & \makecell[t l]{1 means that they voted, 0 means that they did not}\\
+	\textit{Original name} & V241118 \\
+	\textit{Pre/Post-election} & Both\\
+\end{tabular}
+\vskip.2in
+
+\section{\centering{Emotions and attention}}
+\textcolor{white}{.}
+\vskip.01in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & hope \\ 
+	\textit{Definition} & \makecell[t l]{How hopeful does Respondent feel about how things are going in \\the country} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``not at all'' to \\``extremely''}\\
+	\textit{Original name} & V241118 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & fear \\ 
+	\textit{Definition} & \makecell[t l]{How afraid does Respondent feel about how things are going in \\the country} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``not at all'' to \\``extremely''}\\
+	\textit{Original name} & V241119 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & outrage \\ 
+	\textit{Definition} & \makecell[t l]{How outraged does Respondent feel about how things are going in \\the country} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``not at all'' to \\``extremely''}\\
+	\textit{Original name} & V241120 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & attention \\ 
+	\textit{Definition} & \makecell[t l]{How often does Respondent pay attention to what’s going on in\\
+		government and politics?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``always'' to ``never''}\\
+	\textit{Original name} & V241004 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.2in
+
+\section{\centering{Trust}}
+\textcolor{white}{.}
+\vskip.01in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & trustGov \\ 
+	\textit{Definition} & \makecell[t l]{How often can Respondent trust the federal government in\\
+		Washington to do what is right?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``always'' to ``never''}\\
+	\textit{Original name} & V241229 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & trustCourts \\ 
+	\textit{Definition} & \makecell[t l]{How often can Respondent trust the court system to do what is\\ right?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``always'' to ``never''}\\
+	\textit{Original name} & V241229 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & trustPeople \\ 
+	\textit{Definition} & \makecell[t l]{Generally speaking, how often can Respondent trust other people?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``always'' to ``never''}\\
+	\textit{Original name} & V241234 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & trustSci \\ 
+	\textit{Definition} & \makecell[t l]{How much does Respondent trust scientists?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with four values ranging from ``a lot'' to ``not at all''}\\
+	\textit{Original name} & V241234 \\
+	\textit{Pre/Post-election} & Post-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & trustMSM \\ 
+	\textit{Definition} & \makecell[t l]{How much does Respondent trust traditional news media, such as\\ newspapers, television or radio?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with four values ranging from ``a lot'' to ``not at all''}\\
+	\textit{Original name} & V242422 \\
+	\textit{Pre/Post-election} & Post-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & trustMSM \\ 
+	\textit{Definition} & \makecell[t l]{How much does Respondent trust social media, such as Facebook,\\ Twitter or X, or Instagram?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with four values ranging from ``a lot'' to ``not at all''}\\
+	\textit{Original name} & V242423 \\
+	\textit{Pre/Post-election} & Post-election\\
+\end{tabular}
+\vskip.2in
+
+\section{\centering{Policy positions}}
+\textcolor{white}{.}
+\vskip.01in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & healthPolicy \\ 
+	\textit{Definition} & \makecell[t l]{Respondent's view on the best health insurance policy} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with seven values ranging from ``Government\\insurance'' to ``Private insurances''}\\
+	\textit{Original name} & V241245 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & abortion \\ 
+	\textit{Definition} & \makecell[t l]{How Respondent views the ideal regulations on abortion} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with seven values ranging from ``always permitted''\\ to ``never permitted''}\\
+	\textit{Original name} & V241248 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & univApproval \\ 
+	\textit{Definition} & \makecell[t l]{Does Respondent approve or disapprove of how universities are run?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with seven values ranging from ``approve strongly''\\ to ``disapprove strongly''}\\
+	\textit{Original name} & V241287x \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & deiApproval \\ 
+	\textit{Definition} & \makecell[t l]{Does Respondent favor or oppose DEI (Diversity, Equity,\\and Inclusion)?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with seven values ranging from ``favor strongly''\\ to ``oppose strongly''}\\
+	\textit{Original name} & V241290x \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & voterID \\ 
+	\textit{Definition} & \makecell[t l]{Does Respondent favor or oppose requiring ID while voting?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with seven values ranging from ``favor strongly''\\ to ``oppose strongly''}\\
+	\textit{Original name} & V241319x \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & gayMarriage \\ 
+	\textit{Definition} & \makecell[t l]{Does Respondent favor or oppose right of same sex couples to\\legally marry?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with seven values ranging from ``favor strongly''\\ to ``oppose strongly''}\\
+	\textit{Original name} & V241385x \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & armUkraine \\ 
+	\textit{Definition} & \makecell[t l]{Does Respondent favor or oppose U.S. giving weapons to help\\Ukraine fight Russia?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with seven values ranging from ``favor strongly''\\ to ``oppose strongly''}\\
+	\textit{Original name} & V241400x \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & armIsrael \\ 
+	\textit{Definition} & \makecell[t l]{Does Respondent favor or oppose U.S. giving military assistance to\\ Israel?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with seven values ranging from ``favor strongly''\\ to ``oppose strongly''}\\
+	\textit{Original name} & V241403x \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & gunCon \\ 
+	\textit{Definition} & \makecell[t l]{Does Respondent think the federal government should make it\\more difficult or easier to buy a gun?} \\
+	\textit{Scale} & \makecell[t l]{Character variable with three possible values: ``More difficult,''\\\ ``Easier,'' and ``About the same''}\\
+	\textit{Original name} & V242325 \\
+	\textit{Pre/Post-election} & Post-election\\
+\end{tabular}
+\vskip.2in
+
+\section{\centering{Environment}}
+\textcolor{white}{.}
+\vskip.01in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & envBusiness \\ 
+	\textit{Definition} & \makecell[t l]{Respondent's views on environmental regulation} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with seven values ranging from ``Need more env.\\ regulations on business'' to ``Env. regulations too burdensome\\already''}\\
+	\textit{Original name} & V241258 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & climateChangeAction \\ 
+	\textit{Definition} & \makecell[t l]{Respondent's views on whether the US government should be\\doing more or less about rising temperatures} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with seven values ranging from ``much more'' to\\``much less''}\\
+	\textit{Original name} & V241366x \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & climateChangeEffect \\ 
+	\textit{Definition} & \makecell[t l]{Respondent's views on how much climate change is effecting\\severe weather events or temperature patterns in the U.S.} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``not at all'' to ``a\\great deal''}\\
+	\textit{Original name} & V242321 \\
+	\textit{Pre/Post-election} & Post-election\\
+\end{tabular}
+\vskip.2in
+
+\section{\centering{Political principles and commitments}}
+\textcolor{white}{.}
+\vskip.01in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & ideology \\ 
+	\textit{Definition} & \makecell[t l]{Respondent's liberalism/conservatism} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with seven values ranging from ``very liberal'' to\\``very conservative''}\\
+	\textit{Original name} & V241177 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & partyID \\ 
+	\textit{Definition} & \makecell[t l]{Respondent's partisanship} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with seven values ranging from ``strong democrat''\\to ``strong republican''}\\
+	\textit{Original name} & V241227x \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & pressFreedom \\ 
+	\textit{Definition} & \makecell[t l]{Respondent's assessment of how important it is that news\\organizations are free to criticize political leaders?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``not important''\\to ``extremely important''}\\
+	\textit{Original name} & V241324 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & sepPowers \\ 
+	\textit{Definition} & \makecell[t l]{Respondent's the executive, legislative, and judicial branches of\\government keep one another from having too much power} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``not important''\\to ``extremely important''}\\
+	\textit{Original name} & V241325 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & facts \\ 
+	\textit{Definition} & \makecell[t l]{How important is it that people agree on basic facts even if they\\disagree politically?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``not important''\\to ``extremely important''}\\
+	\textit{Original name} & V241327 \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & compromisePrinciples \\ 
+	\textit{Definition} & \makecell[t l]{Does Respondent prefer government officials who compromise or\\stick to principles?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with six values ranging from ``prefers \\compromise strongly'' to ``prefers principles strongly''}\\
+	\textit{Original name} & V241338x \\
+	\textit{Pre/Post-election} & Pre-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & natPride \\ 
+	\textit{Definition} & \makecell[t l]{Does Respondent believe that the U.S. is better or worse than\\most countries?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from ``a lot\\better'' to ``a lot worse''}\\
+	\textit{Original name} & V242266x \\
+	\textit{Pre/Post-election} & Post-election\\
+\end{tabular}
+\vskip.1in
+
+\begin{tabular}{ r l }
+	\textbf{Variable} & americanDream \\ 
+	\textit{Definition} & \makecell[t l]{How much opportunity does Respondent think there is in \\America today for the average person to get ahead?} \\
+	\textit{Scale} & \makecell[t l]{Ordered factor with five values ranging from `a great deal'' to \\``none''}\\
+	\textit{Original name} & V242311 \\
+	\textit{Pre/Post-election} & Post-election\\
+\end{tabular}
+\vskip.2in
+
+\section{\centering{Feeling thermometers}}
+\textcolor{white}{.}
+\vskip.01in
+
+All of the variables that begin ``ft\_'' are feeling thermometers, where respondents were asked how warmly or coldly they felt toward various groups, concepts, and institutions, with 0 meaning the most cold and 100 meaning the most warm. All of the questions in this version of the dataset were asked after the 2024 election.
+\vskip.3in
+
+\rowcolors{2}{gray!15}{white}
+\begin{tabular}{ l l r }
+\textbf{Variable} & \textbf{Definition} & \textbf{Original name}\\
+ft\_harris & Kamala Harris & V242125\\
+ft\_trump & Donald Trump & V242126\\
+ft\_waltz & Tim Waltz & V242134 \\
+ft\_vance & J.D. Vance & V242135\\
+ft\_fund & Christian fundamentalists & V242137 \\
+ft\_feminists & Feminists & V242138 \\
+ft\_liberals & Liberals & V242139 \\
+ft\_unions & Labor unions & V242140 \\
+ft\_business & Big business & V242141 \\
+ft\_conservatives & Conservatives & V242142 \\
+ft\_ussc & US Supreme Court & V242143 \\
+ft\_gaylesbian & Gay men and lesbians & V242144 \\
+ft\_congress & Congress & V242145 \\
+ft\_muslims & Muslims & V242146 \\
+ft\_christians & Christians & V242147 \\
+ft\_maga & Make America Great Again (MAGA) & V242148 \\
+ft\_jews & Jews & V242149 \\
+ft\_police &  Police & V242150 \\
+ft\_trans & Transgender people & V242151 \\
+ft\_blm &  Black Lives Matter & V242152 \\
+ft\_nra & National Rifle Association (NRA) & V242153 \\
+ft\_fbi & Federal Bureau of Investigations (FBI) & V242154 \\
+ft\_farmers & Rural Americans & V242155 \\
+ft\_pparenthood & Planned Parenthood & V242156 \\
+\end{tabular}
+ 
+\end{document}
