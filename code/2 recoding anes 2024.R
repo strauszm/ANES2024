@@ -193,15 +193,6 @@ anes2024$v2016[anes2024$v2016==1]<-"Hillary Clinton"
 anes2024$v2016[anes2024$v2016==2]<-"Donald Trump"
 anes2024$v2016[anes2024$v2016==5]<-"Other"
 
-#recode firstReg-------------
-#V242054x
-anes2024$firstReg[anes2024$firstReg<0]<-NA
-anes2024<-anes2024 %>%
-  mutate(firstReg=recode_factor(firstReg, '1'="Have never registered",
-                                 '2'="In the past year",'3'="1-2 years ago",
-                                 '4'="3-4 years ago",'5'="5 or more years ago"))
-anes2024$firstReg<-as.ordered(anes2024$firstReg)
-
 #recode turnout-----------
 #V242095x
 anes2024$turnout[anes2024$turnout<0]<-NA
